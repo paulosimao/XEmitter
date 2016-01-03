@@ -1,0 +1,29 @@
+{
+  "name": "xtraemitter",
+  "version": "0.0.1",
+  "description": "Event Emitter w extra functionalities (Based on Regex)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulosimao/XEmitter.git"
+  },
+  "keywords": [
+    "Event",
+    "Emitter",
+    "eventemitter",
+    "regex",
+    "regexp"
+  ],
+  "author": "'Paulo <'paulosimao@gmail.com'> ('http://github.com/paulosimao')",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/paulosimao/XEmitter/issues"
+  },
+  "homepage": "https://github.com/paulosimao/XEmitter#readme",
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  }
+}
