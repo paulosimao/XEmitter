@@ -57,9 +57,6 @@ describe('XEmitter Test', function () {
 	it('Should once be triggered once', function (done) {
 		var e     = new XEmitter();
 		var count = 0;
-		var fn    = function () {
-			assert(false, 'Should not be triggered');
-		};
 
 		e.once('A', function () {
 			count++;

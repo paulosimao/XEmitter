@@ -1,7 +1,7 @@
 # XEmitter
 Event Emitter w some bonuses
 
-This is a replacement for standard EventEmitter, allows usage of Regex. Except for this, it behaves the same way the standard Event Emiiter, please see below:
+This is a replacement for standard EventEmitter, allows usage of Regex. Except for this, it behaves the same way the standard Event Emitter, please see below:
 
     it('Should Run On Regex', function (done) {
         var e    = new XEmitter();

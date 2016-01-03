@@ -18,7 +18,7 @@ XEmitter.prototype.addListener        = function (event, listener) {
 
 
 };
-XEmitter.prototype.emit               = function (event, args) {
+XEmitter.prototype.emit               = function (evt, args) {
 	var event = arguments[0];
 	var args1 = [];
 	for (var i = 1; i < arguments.length; i++) {
@@ -27,7 +27,7 @@ XEmitter.prototype.emit               = function (event, args) {
 
 	for (var l in this.listeners) {
 		if (this.listeners[l].regex.test(event)) {
-			for (l1 of this.listeners[l].listeners) {
+			for (var l1 of this.listeners[l].listeners) {
 				l1(...args1);
 			}
 		}
@@ -53,10 +53,10 @@ XEmitter.prototype.on                 = function (event, listener) {
 	this.addListener(event, listener);
 
 };
-XEmitter.prototype.once               = function (event, listener) {
+XEmitter.prototype.once               = function (evt, list) {
 	var self     = this;
-	var event    = event;
-	var listener = listener;
+	var event    = evt;
+	var listener = list;
 
 	function fn() {
 		var args = [];
@@ -66,8 +66,6 @@ XEmitter.prototype.once               = function (event, listener) {
 		listener(...args);
 		self.removeListener(event, fn);
 	}
-
-	fn.___TEST = 'FARELO';
 
 	this.addListener(event, fn);
 
