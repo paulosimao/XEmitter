@@ -1,11 +1,11 @@
 /**
  * Created by paulo.simao on 03/01/2016.
  */
-var XEmitter = require('../index');
+var XtraEmitter = require('../index');
 var assert   = require('assert');
 describe('XEmitter Test', function () {
 	it('Should Run Basic Test', function (done) {
-		var e = new XEmitter();
+		var e = new XtraEmitter();
 		e.on('.*', function (a, b, c) {
 			console.log(`ON EVENT .*: ${a},${b},${c}`);
 			//delete e;
@@ -18,7 +18,7 @@ describe('XEmitter Test', function () {
 	});
 
 	it('Should Run On Regex', function (done) {
-		var e    = new XEmitter();
+		var e    = new XtraEmitter();
 		var noXs = 0;
 		e.on('A.*', function (a) {
 			assert.equal('a', a);
@@ -39,7 +39,7 @@ describe('XEmitter Test', function () {
 	});
 
 	it('Should remove listener', function (done) {
-		var e  = new XEmitter();
+		var e  = new XtraEmitter();
 		var fn = function () {
 			assert(false, 'Should not be triggered');
 		};
@@ -55,7 +55,7 @@ describe('XEmitter Test', function () {
 	});
 
 	it('Should once be triggered once', function (done) {
-		var e     = new XEmitter();
+		var e     = new XtraEmitter();
 		var count = 0;
 
 		e.once('A', function () {

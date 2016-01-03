@@ -1,10 +1,11 @@
-# XEmitter
+# XtraEmitter
 Event Emitter w some bonuses
 
 This is a replacement for standard EventEmitter, allows usage of Regex. Except for this, it behaves the same way the standard Event Emitter, please see below:
 
+    var XtraEmitter = require('xtraemitter);
     it('Should Run On Regex', function (done) {
-        var e    = new XEmitter();
+        var e    = new XtraEmitter();
         var noXs = 0;
         e.on('A.*', function (a) {
         	assert.equal('a', a);

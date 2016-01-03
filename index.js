@@ -1,11 +1,11 @@
 /**
  * Created by paulo.simao on 03/01/2016.
  */
-function XEmitter() {
+function XtraEmitter() {
 	this.listeners = {};
 }
 
-XEmitter.prototype.addListener        = function (event, listener) {
+XtraEmitter.prototype.addListener        = function (event, listener) {
 	//var r = new RegExp(event);
 	//this.listeners[listener] = new RegExp(event);
 	if (!this.listeners[event]) {
@@ -18,7 +18,7 @@ XEmitter.prototype.addListener        = function (event, listener) {
 
 
 };
-XEmitter.prototype.emit               = function (evt, args) {
+XtraEmitter.prototype.emit               = function (evt, args) {
 	var event = arguments[0];
 	var args1 = [];
 	for (var i = 1; i < arguments.length; i++) {
@@ -34,26 +34,26 @@ XEmitter.prototype.emit               = function (evt, args) {
 	}
 
 };
-XEmitter.prototype.getMaxListeners    = function () {
+XtraEmitter.prototype.getMaxListeners    = function () {
 	return Number.MAX_SAFE_INTEGER;
 };
-XEmitter.prototype.listenerCount      = function (type) {
+XtraEmitter.prototype.listenerCount      = function (type) {
 	if (this.listeners[type]) {
 		return this.listeners[type].listeners.length;
 	}
 	return 0;
 };
-XEmitter.prototype.listeners          = function (type) {
+XtraEmitter.prototype.listeners          = function (type) {
 	if (this.listeners[type]) {
 		return this.listeners[type].listeners.slice(0);
 	}
 	return null;
 };
-XEmitter.prototype.on                 = function (event, listener) {
+XtraEmitter.prototype.on                 = function (event, listener) {
 	this.addListener(event, listener);
 
 };
-XEmitter.prototype.once               = function (evt, list) {
+XtraEmitter.prototype.once               = function (evt, list) {
 	var self     = this;
 	var event    = evt;
 	var listener = list;
@@ -71,18 +71,18 @@ XEmitter.prototype.once               = function (evt, list) {
 
 
 };
-XEmitter.prototype.removeAllListeners = function (event) {
+XtraEmitter.prototype.removeAllListeners = function (event) {
 	this.listeners[event].listeners = {};
 
 };
-XEmitter.prototype.removeListener     = function (event, listener) {
+XtraEmitter.prototype.removeListener     = function (event, listener) {
 	for (var i = 0; i < this.listeners[event].listeners.length; i++) {
 		if (this.listeners[event].listeners[i] === listener) {
 			return this.listeners[event].listeners.splice(i);
 		}
 	}
 };
-XEmitter.prototype.setMaxListeners    = function (n) {
+XtraEmitter.prototype.setMaxListeners    = function (n) {
 
 };
-module.exports                        = XEmitter;
+module.exports                        = XtraEmitter;
