@@ -1,6 +1,6 @@
 {
   "name": "xtraemitter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Event Emitter w extra functionalities (Based on Regex)",
   "main": "index.js",
   "scripts": {

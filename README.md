@@ -24,4 +24,4 @@ This is a replacement for standard EventEmitter, allows usage of Regex. Except f
         e.emit('END');
     });
 
-#### Important: Feedback on improvements and issues are always welcome - please refer to (https://github.com/paulosimao/xemitter)
+#### Important: Feedback on improvements and issues are always welcome - please refer to (https://github.com/paulosimao/xtraemitter)
