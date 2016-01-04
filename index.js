@@ -10,7 +10,7 @@ XtraEmitter.prototype.addListener        = function (event, listener) {
 	//this.listeners[listener] = new RegExp(event);
 	if (!this.listeners[event]) {
 		this.listeners[event] = {
-			regex: new RegExp(event),
+			regex: new RegExp('^' + event + '$'),
 			listeners: []
 		};
 	}
@@ -85,4 +85,4 @@ XtraEmitter.prototype.removeListener     = function (event, listener) {
 XtraEmitter.prototype.setMaxListeners    = function (n) {
 
 };
-module.exports                        = XtraEmitter;
+module.exports                           = XtraEmitter;
